@@ -1,11 +1,16 @@
-class EntriesController < ApplicationController
+class Api::V1::EntriesController < ApplicationController
 
 
-      before_action :set_account
+      before_action :set_incident
 
 
 
       def index
+        if @incident
+          @entries = @incident.entries
+        else
+          @entries = Entry.all
+        end
         @entries = @incident.entries
         render json: @entries
       end
@@ -38,8 +43,8 @@ class EntriesController < ApplicationController
 
   private
 
-  def set_entry
-    @incident = Entry.find(params[:incident_id])
+  def set_incident
+    @incident = Incident.find(params[:incident_id])
   end
 
   def entry_params

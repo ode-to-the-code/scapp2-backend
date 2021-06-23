@@ -1,13 +1,16 @@
-class IncidentsController < ApplicationController
+
+
+class Api::V1::IncidentsController < ApplicationController
 
 
     def index
+      binding.pry
       @incidents = Incident.all
       render json: @incidents
     end
 
     def create
-      @incident =   Incident.new(incident_params)
+      @incident = Incident.new(incident_params)
       if @incident.save
         render json: @incident
       else
@@ -27,10 +30,10 @@ class IncidentsController < ApplicationController
 
 
 
-    private
-
-    def incidents_params
-      params.require(:incident).permit(:title, :date)
-    end
+    # private
+    #
+    # def incidents_params
+    #   params.require(:incident).permit(:title, :date)
+    # end
 
 end
