@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_220811) do
     t.string "selftalk"
   end
 
+
   create_table "incidents", force: :cascade do |t|
     t.string "title"
     t.datetime "date"
@@ -30,3 +31,43 @@ ActiveRecord::Schema.define(version: 2021_06_20_220811) do
   end
 
 end
+
+#
+#
+# incident 1- Went to Friend's Birthday
+# Went to Get a New Car
+#
+#
+# -------
+#
+# entry1- got there late
+# entry2- forgot gift
+#
+#
+#
+# ---Went to Friend's Birthday--
+#
+# Entry 1
+# 1 brief description
+# i went to my friends birthday
+#
+# 2
+# self talk
+# i got there late, theyll think i don't care about them
+#
+# 3
+# positive friendresponse
+# you made it here, they don't care etc
+#
+#
+# Entry2
+# forgot to bring a gift
+#
+#
+#
+#
+#
+#
+#
+#
+#
